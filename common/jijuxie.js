@@ -2,12 +2,12 @@
  * Created by 12156 on 2017/3/26.
  */
 'use strict';
-var JJX = {};
+var J = {};
 /**
  * 打印值
  * @param obj
  */
-JJX.dump = function (obj) {
+J.dump = function (obj) {
     console.log(obj);
 };
 /**
@@ -16,7 +16,7 @@ JJX.dump = function (obj) {
  * @param value2
  * @returns {boolean}
  */
-JJX.eq = function (value1, value2) {
+J.eq = function (value1, value2) {
     if (typeof value1 === typeof value2) {
         if ((typeof value1) === 'float') {
             return Math.abs(value1 - value2) < 0.0000001;
@@ -31,13 +31,13 @@ JJX.eq = function (value1, value2) {
  * 强力提示错误
  * @param str
  */
-JJX.errorAlert = function (str) {
+J.errorAlert = function (str) {
     alert('you have a error about(你存在一个错误)::: ' + str);
 };
 /**
  * 检查浏览器ES6可用
  */
-JJX.checkedES6 = function () {
+J.checkedES6 = function () {
     try {
         this.dump(`您的浏览器
 支持ES6`);
@@ -50,6 +50,21 @@ JJX.checkedES6 = function () {
  * @param arr
  * @returns {Array.<T>|string|Blob|ArrayBuffer}
  */
-JJX.arrCopy=function (arr) {
+J.arrCopy=function (arr) {
     return arr.slice();
 };
+/**
+ * objjson格式化
+ * @param obj
+ */
+J.jsonEncode=function(obj){
+ return JSON.stringify(obj);
+};
+/**
+ * json 解码
+ * @param json
+ */
+J.jsonDeCode=function (json) {
+    return JSON.parse(json);
+};
+
