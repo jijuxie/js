@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$/node/ko2/HelloKoa2" libraries="{js/node/ko2/HelloKoa2/node_modules}" />
+    <file url="file://$PROJECT_DIR$/node/ko2/base" libraries="{js/node/ko2/base/node_modules}" />
+    <file url="file://$PROJECT_DIR$/node/newkoa" libraries="{js/node/newkoa/node_modules}" />
+  </component>
+</project>

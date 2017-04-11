@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../common/jijuxie.js"></script>
+</head>
+<body>
+<script>
+    function People(obj) {
+        if (this === window) {
+            J.errorAlert('没有用new 声明People');
+            throw ('没有用new 声明People');
+        } else {
+            this.name = obj.name || '匿名';
+            this.age = obj.age || 1;
+            this.sex = obj.sex || '男';
+        }
+    }
+    //通过绑定节约声明后的内存开销
+    People.prototype.hello = function () {
+        alert(this.name + 'say hello');
+    };
+    function creatPeople(props) {
+        return new People(props || {});
+    }
+    var pe = creatPeople();
+    pe.hello();
+    //创建继承关系的构造函数
+    function SonPeople(props) {
+        People.call(this, props);
+        this.father = props.father || '父亲匿名';
+    }
+    J.inherits(SonPeople, People);
+    SonPeople.prototype.getFather = function () {
+        return this.father;
+    };
+    var son = J.create(SonPeople,{father:'神'});
+
+alert(son.getFather());
+
+</script>
+</body>
+</html>

@@ -50,21 +50,41 @@ J.checkedES6 = function () {
  * @param arr
  * @returns {Array.<T>|string|Blob|ArrayBuffer}
  */
-J.arrCopy=function (arr) {
+J.arrCopy = function (arr) {
     return arr.slice();
 };
 /**
- * objjson格式化
+ * obj json格式化
  * @param obj
  */
-J.jsonEncode=function(obj){
- return JSON.stringify(obj);
+J.jsonEncode = function (obj) {
+    return JSON.stringify(obj);
 };
 /**
  * json 解码
  * @param json
  */
-J.jsonDeCode=function (json) {
+J.jsonDeCode = function (json) {
     return JSON.parse(json);
 };
-
+/**
+ * 继承用方法
+ * @param Child
+ * @param Parent
+ */
+J.inherits = function (Child, Parent) {
+    var F = function () {
+    };
+    F.prototype = Parent.prototype;
+    Child.prototype = new F();
+    Child.prototype.constructor = Child;
+};
+/**
+ *实例化一个对象
+ * @param Class
+ * @param props
+ * @returns {*}
+ */
+J.create = function (Class, props) {
+    return new Class(props || {});
+};
